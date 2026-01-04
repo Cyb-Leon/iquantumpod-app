@@ -1,313 +1,188 @@
-import Image from "next/image"
-import { Play, Clock, Calendar, Filter } from "lucide-react"
+"use client"
+
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Navbar } from "@/components/Navbar"
+import { Play, Clock, Tag } from "lucide-react"
+import Link from "next/link"
 import { Footer } from "@/components/Footer"
+import { Navbar } from "@/components/Navbar"
 
-interface Episode {
-  number: number
-  category: string
-  title: string
-  description: string
-  duration: string
-  date: string
-  platforms: string[]
-  featured?: boolean
-}
-
-const allEpisodes: Episode[] = [
+// Sample episode data - in a real app, this would come from your YouTube API or database
+const episodes = [
   {
-    number: 12,
-    category: "Culture",
-    title: "The Sound of the Streets",
-    description:
-      "How urban culture shapes the music we hear and the stories we tell. A deep dive into authenticity, expression, and community.",
-    duration: "45 min",
-    date: "Dec 28, 2025",
-    platforms: ["Spotify", "Apple", "YouTube"],
-    featured: true,
-  },
-  {
-    number: 11,
-    category: "Community",
-    title: "Building Bridges",
-    description:
-      "Three community leaders discuss bringing people together across differences. Finding common ground in divided times.",
-    duration: "52 min",
-    date: "Dec 21, 2025",
-    platforms: ["Spotify", "Apple", "YouTube"],
-  },
-  {
-    number: 10,
-    category: "Youth",
-    title: "Next Generation Rising",
+    id: "zU9D_4zN41M",
+    episodeNumber: 58,
+    title: "Mighty Paragon — Hip-Hop Roots, Hype, Gangster Rap, YFM, Drugs, and Surviving the Edge..",
     description:
       "Young activists share their vision for change. What does leadership look like when you're fighting for your future?",
-    duration: "38 min",
-    date: "Dec 14, 2025",
-    platforms: ["Spotify", "Apple", "YouTube"],
-  },
-  {
-    number: 9,
-    category: "Politics",
-    title: "Power & The People",
-    description:
-      "What happens when policy meets the pavement? A raw conversation about representation, justice, and accountability.",
-    duration: "48 min",
-    date: "Dec 7, 2025",
-    platforms: ["Spotify", "Apple", "YouTube"],
-  },
-  {
-    number: 8,
-    category: "Culture",
-    title: "Art in the Age of AI",
-    description:
-      "Artists and technologists debate creativity, authenticity, and what it means to make something human in a digital world.",
-    duration: "55 min",
-    date: "Nov 30, 2025",
-    platforms: ["Spotify", "Apple", "YouTube"],
-  },
-  {
-    number: 7,
-    category: "Society",
-    title: "The Housing Question",
-    description:
-      "From rent prices to gentrification—real stories from people navigating the housing crisis in major cities.",
-    duration: "62 min",
-    date: "Nov 23, 2025",
-    platforms: ["Spotify", "Apple", "YouTube"],
-  },
-  {
-    number: 6,
-    category: "Community",
-    title: "Small Business, Big Dreams",
-    description:
-      "Local entrepreneurs share the hustle, the setbacks, and the wins of building something from nothing.",
-    duration: "44 min",
-    date: "Nov 16, 2025",
-    platforms: ["Spotify", "Apple", "YouTube"],
-  },
-  {
-    number: 5,
+    duration: "45:23",
     category: "Youth",
-    title: "Mental Health Unplugged",
-    description:
-      "Breaking the stigma—young people open up about anxiety, depression, and finding support in unexpected places.",
-    duration: "58 min",
-    date: "Nov 9, 2025",
-    platforms: ["Spotify", "Apple", "YouTube"],
+    thumbnail: "/hqdefault.avif",
   },
   {
-    number: 4,
-    category: "Culture",
-    title: "Food Is Identity",
+    id: "xS-l_dbqpvI",
+    episodeNumber: 22,
+    title: "Hlogi Makau on Family business, succession plan, Caprivi, Drugs and property business.",
     description:
-      "Chefs, home cooks, and food writers explore how cuisine connects us to heritage, memory, and each other.",
-    duration: "41 min",
-    date: "Nov 2, 2025",
-    platforms: ["Spotify", "Apple", "YouTube"],
-  },
-  {
-    number: 3,
-    category: "Politics",
-    title: "Voting While Young",
-    description:
-      "First-time voters share why they showed up—or didn't. A candid look at political engagement in Gen Z.",
-    duration: "47 min",
-    date: "Oct 26, 2025",
-    platforms: ["Spotify", "Apple", "YouTube"],
-  },
-  {
-    number: 2,
-    category: "Society",
-    title: "The Gig Economy Diaries",
-    description:
-      "Drivers, freelancers, and side-hustlers reveal the reality behind the flexibility myth.",
-    duration: "50 min",
-    date: "Oct 19, 2025",
-    platforms: ["Spotify", "Apple", "YouTube"],
-  },
-  {
-    number: 1,
+      "Three community leaders discuss bringing people together across differences. Finding common ground in divided times.",
+    duration: "59:47",
     category: "Community",
-    title: "Where It All Began",
+    thumbnail: "/hlhogim.jpg",
+  },
+  {
+    id: "10GoaoFNLs4",
+    episodeNumber: 48,
+    title: " Ndabezitha Macingwane II Chief Delisa Moses Masilela on Heritage, Chiefery, & Tradition.",
     description:
-      "The pilot episode. Meet the hosts, learn the vision, and hear the first passengers in our taxi.",
-    duration: "35 min",
-    date: "Oct 12, 2025",
-    platforms: ["Spotify", "Apple", "YouTube"],
+      "How urban culture shapes the music we hear and the stories we tell. A deep dive into authenticity, expression, and community.",
+    duration: "1:13:46",
+    category: "Culture",
+    thumbnail: "/ndabezitham.jpg",
+  },
+  {
+    id: "d619lJCExgk",
+    episodeNumber: 12,
+    title: "Muzithembuzi on Soccer, Norkem Park High, Touchline, Buffet, Nak'indaba zakho & Music...",
+    description:
+      "How creativity becomes a tool for social change. Artists discuss using their platform to challenge the status quo.",
+    duration: "47:39",
+    category: "Arts",
+    thumbnail: "/muzithembuzi.jpg",
+  },
+  {
+    id: "mYDGczkEsnM",
+    episodeNumber: 56,
+    title: "Mickey M on Siz n Scoop, MT Mtekza, Skhanda Nation, K.O, Universal Records & Kasi Rap.",
+    description:
+      "How creativity becomes a tool for social change. Artists discuss using their platform to challenge the status quo.",
+    duration: "1:20:44",
+    category: "Arts",
+    thumbnail: "/mickym.jpg",
+  },
+  {
+    id: "h9VYJ7FqJXE",
+    episodeNumber: 13,
+    title: "Tembisa west secondary, Bukhosi Mkhize & Fortune Mashala on matric results & Awards...",
+    description:
+      "Breaking down wealth inequality and what it means for everyday people. Real talk about money, access, and opportunity.",
+    duration: "1:31:20",
+    category: "Education",
+    thumbnail: "/tembisawest.jpg",
   },
 ]
 
-const categories = ["All", "Culture", "Community", "Youth", "Politics", "Society"]
+export default function EpisodesPage() {
+  const [currentVideo, setCurrentVideo] = useState(episodes[0])
 
-function EpisodeCard({ episode }: { episode: Episode }) {
-  if (episode.featured) {
-    return (
-      <Card className="md:col-span-2 bg-linear-to-br from-zinc-900 to-zinc-800 border-emerald-500/50 overflow-hidden hover:border-emerald-500 transition-all group">
-        <div className="flex flex-col md:flex-row">
-          {/* Image Section */}
-          <div className="relative w-full md:w-80 h-64 md:h-auto shrink-0 overflow-hidden">
-            <div className="absolute inset-0 bg-linear-to-br from-emerald-500/20 to-transparent z-10"></div>
-            <div className="absolute inset-0 animate-pulse-slow">
-              <Image
-                src="/iquantumPodcast.png"
-                alt={episode.title}
-                fill
-                className="object-cover animate-float-subtle"
-                priority
-              />
-            </div>
-            {/* Animated glow ring */}
-            <div className="absolute inset-4 border-2 border-emerald-500/30 rounded-lg animate-ping-slow pointer-events-none"></div>
-          </div>
+  return (
+    <div className="min-h-screen bg-zinc-950">
+      {/* Navigation */}
+<Navbar/>
 
-          {/* Content Section */}
-          <div className="p-6 md:p-8 flex-1">
-            <div className="flex items-center gap-3 mb-3">
-              <span className="px-3 py-1 bg-emerald-500 text-black text-xs font-bold rounded animate-pulse">
-                LATEST
-              </span>
-              <span className="text-emerald-500 text-sm font-medium">
-                EP. {episode.number} • {episode.category}
-              </span>
-            </div>
-            <h3 className="text-2xl sm:text-3xl text-white font-bold mb-4 group-hover:text-emerald-500 transition-colors">
-              {episode.title}
-            </h3>
-            <p className="text-lg text-zinc-400 mb-6 leading-relaxed">{episode.description}</p>
-            <div className="flex flex-wrap items-center justify-between gap-4">
-              <div className="flex items-center gap-4">
-                <Button className="bg-emerald-500 hover:bg-emerald-600 text-black font-semibold">
-                  <Play className="w-4 h-4 fill-black mr-2" />
-                  Play Now
-                </Button>
-                <div className="flex items-center gap-1 text-zinc-500 text-sm">
-                  <Clock className="w-4 h-4" />
-                  <span>{episode.duration}</span>
+      {/* Main Content */}
+      <div className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl mb-2 graffi-titles bg-clip-text text-transparent" style={{
+              backgroundImage: 'linear-gradient(to right,rgb(255, 0, 0),rgb(255, 11, 11),rgb(255, 106, 0),rgb(255, 191, 0),rgb(11, 120, 123),rgb(148, 1, 9),rgb(93, 7, 143))'
+            }}> All <span className="text-accent">Episodes</span></h1>
+          <p className="text-zinc-400 mb-8">Watch and listen to every conversation</p>
+
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* Main Video Player */}
+            <div className="lg:col-span-2">
+              <div className="bg-zinc-900 border border-zinc-800 rounded-lg overflow-hidden">
+                {/* YouTube Iframe */}
+                <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+                  <iframe
+                    className="absolute top-0 left-0 w-full h-full"
+                    src={`https://www.youtube.com/embed/${currentVideo.id}?autoplay=1`}
+                    title={currentVideo.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
                 </div>
-                <div className="flex items-center gap-1 text-zinc-500 text-sm">
-                  <Calendar className="w-4 h-4" />
-                  <span>{episode.date}</span>
+
+                {/* Custom Metadata */}
+                <div className="p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="px-3 py-1 bg-emerald-500/20 text-emerald-500 rounded-full text-sm font-medium">
+                      EP. {currentVideo.episodeNumber}
+                    </span>
+                    <span className="px-3 py-1 bg-zinc-800 text-zinc-300 rounded-full text-sm flex items-center gap-1">
+                      <Tag className="w-3 h-3" />
+                      {currentVideo.category}
+                    </span>
+                    <span className="text-zinc-500 text-sm flex items-center gap-1">
+                      <Clock className="w-4 h-4" />
+                      {currentVideo.duration}
+                    </span>
+                  </div>
+
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">{currentVideo.title}</h2>
+
+                  <p className="text-zinc-400 leading-relaxed mb-6">{currentVideo.description}</p>
+
+                  <div className="flex gap-3">
+                    <Button className="bg-emerald-500 hover:bg-emerald-600 text-black font-semibold">
+                      <Play className="w-4 h-4 mr-2 fill-black" />
+                      Listen on Spotify
+                    </Button>
+                    <Button
+                      variant="outline"
+                      className="border-zinc-700 text-zinc-300 hover:bg-zinc-800 bg-transparent"
+                    >
+                      Apple Podcasts
+                    </Button>
+                  </div>
                 </div>
               </div>
-              <div className="flex gap-2">
-                {episode.platforms.map((platform) => (
-                  <span key={platform} className="px-3 py-1 bg-zinc-800 text-zinc-300 rounded-full text-xs">
-                    {platform}
-                  </span>
+            </div>
+
+            {/* Episode List */}
+            <div className="lg:col-span-1">
+              <h3 className="text-xl font-bold text-white mb-4">More Episodes</h3>
+              <div className="space-y-4 max-h-[800px] overflow-y-auto pr-2">
+                {episodes.map((episode) => (
+                  <Card
+                    key={episode.id}
+                    className={`bg-zinc-900 border-zinc-800 overflow-hidden cursor-pointer transition-all hover:border-emerald-500 ${
+                      currentVideo.id === episode.id ? "border-emerald-500" : ""
+                    }`}
+                    onClick={() => setCurrentVideo(episode)}
+                  >
+                    <div className="relative">
+                      <img
+                        src={episode.thumbnail || "/placeholder.svg"}
+                        alt={episode.title}
+                        className="w-full h-50 object-cover"
+                      />
+                      <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                        <div className="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center">
+                          <Play className="w-5 h-5 fill-black text-black ml-1" />
+                        </div>
+                      </div>
+                      <span className="absolute top-2 right-2 px-2 py-1 bg-black/80 text-white text-xs rounded">
+                        {episode.duration}
+                      </span>
+                    </div>
+
+                    <div className="p-4">
+                      <span className="text-emerald-500 text-xs font-medium">
+                        EP. {episode.episodeNumber} • {episode.category}
+                      </span>
+                      <h4 className="text-white font-semibold mt-1 mb-2 line-clamp-2">{episode.title}</h4>
+                      <p className="text-zinc-500 text-sm line-clamp-2">{episode.description}</p>
+                    </div>
+                  </Card>
                 ))}
               </div>
             </div>
           </div>
         </div>
-      </Card>
-    )
-  }
-
-  return (
-    <Card className="bg-zinc-900 border-zinc-800 overflow-hidden hover:border-emerald-500 transition-all group">
-      <div className="p-6">
-        <div className="flex items-start justify-between mb-4">
-          <div className="flex-1">
-            <span className="text-emerald-500 text-sm font-medium">
-              EP. {episode.number} • {episode.category}
-            </span>
-            <h3 className="text-xl text-white font-bold mt-2 mb-3 group-hover:text-emerald-500 transition-colors">
-              {episode.title}
-            </h3>
-          </div>
-        </div>
-        <p className="text-zinc-400 mb-4 leading-relaxed">{episode.description}</p>
-        <div className="flex flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <Button size="sm" className="bg-emerald-500 hover:bg-emerald-600 text-black font-semibold">
-              <Play className="w-4 h-4 fill-black mr-2" />
-              Play
-            </Button>
-            <div className="flex items-center gap-1 text-zinc-500 text-sm">
-              <Clock className="w-4 h-4" />
-              <span>{episode.duration}</span>
-            </div>
-            <div className="flex items-center gap-1 text-zinc-500 text-sm">
-              <Calendar className="w-4 h-4" />
-              <span>{episode.date}</span>
-            </div>
-          </div>
-          <div className="flex gap-2">
-            {episode.platforms.map((platform) => (
-              <span key={platform} className="px-3 py-1 bg-zinc-800 text-zinc-300 rounded-full text-xs">
-                {platform}
-              </span>
-            ))}
-          </div>
-        </div>
       </div>
-    </Card>
-  )
-}
 
-export default function EpisodesPage() {
-  return (
-    <div className="min-h-screen bg-[#1a1a1a]">
-      <Navbar />
-
-      {/* Hero */}
-      <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 graffi-titles bg-clip-text text-transparent" style={{
-              backgroundImage: 'linear-gradient(to right,rgb(255, 0, 0),rgb(255, 11, 11),rgb(255, 106, 0),rgb(255, 191, 0),rgb(11, 120, 123),rgb(148, 1, 9),rgb(93, 7, 143))'
-            }}>
-            All <span className="text-emerald-500">Episodes</span>
-          </h1>
-          <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
-            Every conversation, every voice, every story. Dive into our archive of real talk.
-          </p>
-        </div>
-      </section>
-
-      {/* Filters */}
-      <section className="px-4 sm:px-6 lg:px-8 pb-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-wrap items-center gap-3">
-            <Filter className="w-5 h-5 text-zinc-500" />
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  cat === "All"
-                    ? "bg-emerald-500 text-black"
-                    : "bg-zinc-800 text-zinc-300 hover:bg-zinc-700"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Episodes Grid */}
-      <section className="px-4 sm:px-6 lg:px-8 pb-20">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-6">
-            {allEpisodes.map((episode) => (
-              <EpisodeCard key={episode.number} episode={episode} />
-            ))}
-          </div>
-
-          {/* Load More */}
-          <div className="text-center mt-12">
-            <Button variant="outline" className="border-zinc-700 text-zinc-300 hover:bg-zinc-800 bg-transparent">
-              Load More Episodes
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      <Footer />
+      <Footer/>
     </div>
   )
 }
-
