@@ -72,9 +72,12 @@ const episodes = [
   },
 ]
 
+
+
 export default function EpisodesPage() {
   const [currentVideo, setCurrentVideo] = useState(episodes[0])
 
+    
   return (
     <div className="min-h-screen bg-zinc-950">
       {/* Navigation */}
@@ -149,7 +152,7 @@ export default function EpisodesPage() {
                     className={`bg-zinc-900 border-zinc-800 overflow-hidden cursor-pointer transition-all hover:border-emerald-500 ${
                       currentVideo.id === episode.id ? "border-emerald-500" : ""
                     }`}
-                    onClick={() => setCurrentVideo(episode)}
+                    onClick={() => { setCurrentVideo(episode); window.scrollTo(0,0)}}
                   >
                     <div className="relative">
                       <img
