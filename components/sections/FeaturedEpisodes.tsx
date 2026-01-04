@@ -16,36 +16,36 @@ interface Episode {
 //pull these ep/videos from youtube 
 const episodes: Episode[] = [
   {
-    number: 12,
+    number: 58,
     category: "Culture",
-    title: "The Sound of the Streets",
+    title: "Mighty Paragon — Hip-Hop Roots, Hype, Gangster Rap, YFM, Drugs, and Surviving the Edge..",
     description:
       "How urban culture shapes the music we hear and the stories we tell. A deep dive into authenticity, expression, and community.",
     duration: "45 min",
     platforms: ["Youtube", ""],
   },
   {
-    number: 11,
-    category: "Community",
-    title: "Building Bridges",
+    number: 22,
+    category: "Business",
+    title: "Hlogi Makau on Family business, succession plan, Caprivi, Drugs and property business.",
     description:
       "Three community leaders discuss bringing people together across differences. Finding common ground in divided times.",
     duration: "52 min",
     platforms: ["Youtube", ""],
   },
   {
-    number: 10,
-    category: "Youth",
-    title: "Next Generation Rising",
+    number: 48,
+    category: "Culture",
+    title: "Ndabezitha Macingwane II Chief Delisa Moses Masilela on Heritage, Chiefery, & Tradition.",
     description:
       "Young activists share their vision for change. What does leadership look like when you're fighting for your future?",
-    duration: "38 min",
+    duration: "1 hr",
     platforms: ["Youtube", ""],
   },
   {
-    number: 9,
-    category: "Politics",
-    title: "Power & The People",
+    number: 12,
+    category: "Art",
+    title: "Muzithembuzi on Soccer, Norkem Park High, Touchline, Buffet, Nak'indaba zakho & Music...",
     description:
       "What happens when policy meets the pavement? A raw conversation about representation, justice, and accountability.",
     duration: "48 min",
@@ -59,6 +59,7 @@ interface EpisodeCardProps {
 
 function EpisodeCard({ episode }: EpisodeCardProps) {
   return (
+       <Link href="/episodes">
     <Card className="bg-zinc-900 border-zinc-800 overflow-hidden hover:border-emerald-500 transition-all group">
       <div className="p-6">
         <div className="flex items-start justify-between mb-4">
@@ -74,9 +75,12 @@ function EpisodeCard({ episode }: EpisodeCardProps) {
         <p className="text-zinc-400 mb-4 leading-relaxed">{episode.description}</p>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Button size="sm" className="bg-accent hover:bg-emerald-600 text-black font-semibold">
-              <Play className="w-4 h-4 fill-black" />
-            </Button>
+         
+              <Button size="sm" className="bg-accent hover:bg-emerald-600 text-black font-semibold">
+                <Play className="w-4 h-4 fill-black" />
+              </Button>
+        
+
             <span className="text-zinc-500 text-sm">{episode.duration}</span>
           </div>
           <div className="flex gap-2">
@@ -89,6 +93,7 @@ function EpisodeCard({ episode }: EpisodeCardProps) {
         </div>
       </div>
     </Card>
+    </Link>
   )
 }
 
@@ -97,9 +102,9 @@ export function FeaturedEpisodes() {
     <section id="episodes" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl sm:text-5xl mb-4 text-center  graffi-titles bg-clip-text text-transparent "
-                            style={{
-              backgroundImage: 'linear-gradient(to right,rgb(255, 0, 0),rgb(255, 11, 11),rgb(255, 106, 0),rgb(255, 191, 0),rgb(11, 120, 123),rgb(148, 1, 9),rgb(93, 7, 143))'
-            }}
+          style={{
+            backgroundImage: 'linear-gradient(to right,rgb(255, 0, 0),rgb(255, 11, 11),rgb(255, 106, 0),rgb(255, 191, 0),rgb(11, 120, 123),rgb(148, 1, 9),rgb(93, 7, 143))'
+          }}
         >Featured Episodes</h2>
         <p className="text-zinc-400 text-center mb-12">Conversations that move the culture forward</p>
 

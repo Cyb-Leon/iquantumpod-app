@@ -33,7 +33,7 @@ const episodes = [
   {
     id: "10GoaoFNLs4",
     episodeNumber: 48,
-    title: " Ndabezitha Macingwane II Chief Delisa Moses Masilela on Heritage, Chiefery, & Tradition.",
+    title: "Ndabezitha Macingwane II Chief Delisa Moses Masilela on Heritage, Chiefery, & Tradition.",
     description:
       "How urban culture shapes the music we hear and the stories we tell. A deep dive into authenticity, expression, and community.",
     duration: "1:13:46",
