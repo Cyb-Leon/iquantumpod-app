@@ -60,7 +60,7 @@ function EpisodeCard({ episode }: EpisodeCardProps) {
       <div className="p-6">
         <div className="flex items-start justify-between mb-4">
           <div className="flex-1">
-            <span className="text-amber-500 text-sm font-medium">
+            <span className="text-emerald-500 text-sm font-medium">
               EP. {episode.number} • {episode.category}
             </span>
             <h3 className="text-white text-xl font-bold mt-2 mb-3 group-hover:text-amber-500 transition-colors">
@@ -71,7 +71,7 @@ function EpisodeCard({ episode }: EpisodeCardProps) {
         <p className="text-zinc-400 mb-4 leading-relaxed">{episode.description}</p>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Button size="sm" className="bg-amber-500 hover:bg-amber-600 text-black font-semibold">
+            <Button size="sm" className="bg-accent hover:bg-amber-600 text-black font-semibold">
               <Play className="w-4 h-4 fill-black" />
             </Button>
             <span className="text-zinc-500 text-sm">{episode.duration}</span>

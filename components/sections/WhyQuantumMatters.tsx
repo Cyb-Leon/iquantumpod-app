@@ -11,7 +11,7 @@ export function WhyQuantumMatters() {
         <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8">Why iQuantum Podcast Matters</h2>
         <div className="space-y-8">
           {quotes.map((quote) => (
-            <div key={quote} className="border-l-4 border-amber-500 pl-6 text-left">
+            <div key={quote} className="border-l-4 border-accent pl-6 text-left">
               <p className="text-2xl sm:text-3xl font-bold text-white mb-2 text-balance">"{quote}"</p>
             </div>
           ))}

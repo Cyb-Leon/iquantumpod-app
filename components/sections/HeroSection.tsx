@@ -16,12 +16,12 @@ export function HeroSection() {
           
           {/* Main image with float animation */}
           <div className="absolute -inset-28 sm:inset-0 lg:inset-20 animate-float lg:mt-[-150px] mt-[-200px]">
-            <div className="relative w-full h-full animate-glow scale-100 sm:scale-100 lg:scale-100">
+            <div className="relative w-full h-full animate-pulse scale-100 sm:scale-100 lg:scale-100 -mx-10 lg:-mx-2.5">
               <Image
                 src="/iquantumPodcast.png"
                 alt="iQuantum Podcast"
                 fill
-                className="object-contain" //drop-shadow-[0_0_30px_rgba(29,150,157,0.2)]"
+                className="object-contain drop-shadow-[0_0_30px_rgba(11, 120, 123,0.6)]"
                 priority
               />
             </div>
@@ -35,9 +35,9 @@ export function HeroSection() {
 
       <div className="relative max-w-5xl mx-auto text-center">
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 lg:mt-[600px] mt-[400px]">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 lg:mt-[600px] mt-[500px]">
           <Link href="/episodes">
-            <Button className="bg-amber-500 hover:bg-amber-600 text-black font-semibold h-12 px-8 text-lg">
+            <Button className="bg-accent hover:bg-amber-600 text-white font-semibold h-12 px-8 text-lg">
               <Play className="w-5 h-5 mr-2 fill-black" />
               Listen to the Latest Episode
             </Button>
@@ -45,7 +45,7 @@ export function HeroSection() {
           <Link href="/community">
             <Button
               variant="outline"
-              className="border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-black h-12 px-8 text-lg bg-transparent"
+              className="border-accent text-accent hover:bg-amber-500 hover:text-black h-12 px-8 text-lg bg-transparent"
             >
               <MessageCircle className="w-5 h-5 mr-2" />
               Join the Conversation
