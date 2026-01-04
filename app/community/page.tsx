@@ -194,7 +194,9 @@ export default function CommunityPage() {
       {/* Hero */}
       <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto text-center ">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 graffi-titles bg-clip-text text-transparent"   style={{
+              backgroundImage: 'linear-gradient(to right,rgb(255, 0, 0),rgb(255, 11, 11),rgb(255, 106, 0),rgb(255, 191, 0),rgb(11, 120, 123),rgb(148, 1, 9),rgb(93, 7, 143))'
+            }}>
             The <span className="text-emerald-500">Community</span> Hub
           </h1>
           <p className="text-xl text-zinc-400 max-w-2xl mx-auto">

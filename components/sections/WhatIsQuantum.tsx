@@ -33,7 +33,7 @@ export function WhatIsQuantum() {
           <span
             className="text-3xl font-bold bg-clip-text text-transparent water-brush-regular"
             style={{
-              backgroundImage: 'linear-gradient(to right,rgb(255, 0, 0),rgb(255, 11, 11),rgb(255, 106, 0),rgb(255, 191, 0),rgb(108, 162, 250),rgb(148, 1, 9),rgb(93, 7, 143))'
+              backgroundImage: 'linear-gradient(to right,rgb(255, 0, 0),rgb(255, 11, 11),rgb(255, 106, 0),rgb(255, 191, 0),rgb(11, 120, 123),rgb(148, 1, 9),rgb(93, 7, 143))'
             }}
           >
             Quantum
@@ -45,7 +45,11 @@ export function WhatIsQuantum() {
             Podcast
           </span>
         </div>
-        <h2 className="text-4xl sm:text-5xl font-bold text-white mb-12 text-center graffi-titles ">What Is Quantum Podcast?</h2>
+        <h2 className="text-4xl sm:text-5xl font-bold mb-12 text-center graffi-titles bg-clip-text text-transparent"
+                    style={{
+              backgroundImage: 'linear-gradient(to right,rgb(255, 0, 0),rgb(255, 11, 11),rgb(255, 106, 0),rgb(255, 191, 0),rgb(11, 120, 123),rgb(148, 1, 9),rgb(93, 7, 143))'
+            }}
+        >What Is Quantum Podcast?</h2>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-lg text-zinc-300 leading-relaxed mb-6">

@@ -40,7 +40,9 @@ export function CommunitySection() {
   return (
     <section id="community" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl sm:text-5xl font-bold text-white mb-12 text-center">Join the Quantum Community</h2>
+        <h2 className="text-4xl sm:text-5xl font-bold mb-12 text-center graffi-titles bg-clip-text text-transparent"  style={{
+              backgroundImage: 'linear-gradient(to right,rgb(255, 0, 0),rgb(255, 11, 11),rgb(255, 106, 0),rgb(255, 191, 0),rgb(11, 120, 123),rgb(148, 1, 9),rgb(93, 7, 143))'
+            }}>Join the Quantum Community</h2>
 
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           {testimonials.map((testimonial) => (
