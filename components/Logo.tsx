@@ -22,7 +22,7 @@ export function Logo() {
       >
         Quantum
       </span>
-      <span className="text-4xl font-bold bg-clip-text text-transparent oooh-baby"
+      <span className="text-3xl font-bold bg-clip-text text-transparent oooh-baby"
         style={{
           backgroundImage: 'linear-gradient(rgba(11, 120, 123))'
         }}>
