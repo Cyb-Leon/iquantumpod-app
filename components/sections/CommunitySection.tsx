@@ -28,7 +28,7 @@ const testimonials: Testimonial[] = [
 function TestimonialCard({ quote, author, location }: Testimonial) {
   return (
     <Card className="bg-zinc-900 border-zinc-800 p-6">
-      <p className="text-zinc-300 mb-4 italic leading-relaxed">"{quote}"</p>
+      <p className="text-zinc-300 mb-4 italic leading-relaxed">&quot;{quote}&quot;</p>
       <p className="text-emerald-500 font-semibold">
         — {author}, {location}
       </p>
@@ -40,7 +40,7 @@ export function CommunitySection() {
   return (
     <section id="community" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl sm:text-5xl font-bold mb-12 text-center graffi-titles bg-clip-text text-transparent"  style={{
+        <h2 className="text-4xl sm:text-5xl mb-12 text-center graffi-titles bg-clip-text text-transparent"  style={{
               backgroundImage: 'linear-gradient(to right,rgb(255, 0, 0),rgb(255, 11, 11),rgb(255, 106, 0),rgb(255, 191, 0),rgb(11, 120, 123),rgb(148, 1, 9),rgb(93, 7, 143))'
             }}>Join the Quantum Community</h2>
 
@@ -50,7 +50,7 @@ export function CommunitySection() {
           ))}
         </div>
 
-        <div className="bg-gradient-to-br from-accent/10 to-emerald-600/10 border border-accent/30 rounded-2xl p-8 sm:p-12 text-center">
+        <div className="bg-linear-to-br from-accent/10 to-emerald-600/10 border border-accent/30 rounded-2xl p-8 sm:p-12 text-center">
           <h3 className="text-3xl font-bold text-white mb-4">What Should We Talk About Next?</h3>
           <p className="text-zinc-300 mb-8 max-w-2xl mx-auto">
             Quantum is shaped by our community. Submit a topic, share your story, or nominate someone whose voice

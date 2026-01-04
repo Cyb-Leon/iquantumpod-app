@@ -248,7 +248,7 @@ export default function CommunityPage() {
       {/* Newsletter / CTA */}
       <section className="px-4 sm:px-6 lg:px-8 pb-20">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-emerald-500/10 to-emerald-600/10 border border-emerald-500/30 rounded-2xl p-8 sm:p-12 text-center">
+          <div className="bg-linear-to-br from-emerald-500/10 to-emerald-600/10 border border-emerald-500/30 rounded-2xl p-8 sm:p-12 text-center">
             <h3 className="text-3xl font-bold text-white mb-4">Join the Conversation</h3>
             <p className="text-zinc-300 mb-8 max-w-xl mx-auto">
               Get weekly updates, exclusive content, and be the first to know when new episodes drop. 

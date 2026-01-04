@@ -15,14 +15,14 @@ export function Logo() {
         />
       </div>
       <span
-        className="text-3xl font-bold bg-clip-text text-transparent water-brush-regular"
+        className="text-4xl font-bold bg-clip-text text-transparent water-brush-regular"
         style={{
           backgroundImage: 'linear-gradient(to right,rgb(255, 0, 0),rgb(255, 11, 11),rgb(255, 106, 0),rgb(255, 191, 0),rgb(108, 162, 250),rgb(148, 1, 9),rgb(93, 7, 143))'
         }}
       >
         Quantum
       </span>
-      <span className="text-3xl font-bold bg-clip-text text-transparent oooh-baby"
+      <span className="text-4xl font-bold bg-clip-text text-transparent oooh-baby"
         style={{
           backgroundImage: 'linear-gradient(rgba(11, 120, 123))'
         }}>

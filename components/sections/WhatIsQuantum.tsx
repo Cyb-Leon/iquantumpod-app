@@ -19,10 +19,10 @@ function FeatureCard({ icon: Icon, title, description }: FeatureCardProps) {
 }
 
 const features: FeatureCardProps[] = [
-  { icon: Users, title: "Diverse Voices", description: "Real people, real perspectives" },
+  { icon: Users, title: "Kasi Voices", description: "Real people, real perspectives" },
   { icon: MessageCircle, title: "Open Dialogue", description: "Honest, unfiltered talk" },
   { icon: TrendingUp, title: "Community First", description: "Built by and for listeners" },
-  { icon: Mic, title: "Urban Energy", description: "The pulse of the city" },
+  { icon: Mic, title: "16Bus Energy", description: "The pulse of the city" },
 ]
 
 export function WhatIsQuantum() {
@@ -45,7 +45,7 @@ export function WhatIsQuantum() {
             Podcast
           </span>
         </div>
-        <h2 className="text-4xl sm:text-5xl font-bold mb-12 text-center graffi-titles bg-clip-text text-transparent"
+        <h2 className="text-4xl sm:text-5xl mb-12 text-center graffi-titles bg-clip-text text-transparent"
                     style={{
               backgroundImage: 'linear-gradient(to right,rgb(255, 0, 0),rgb(255, 11, 11),rgb(255, 106, 0),rgb(255, 191, 0),rgb(11, 120, 123),rgb(148, 1, 9),rgb(93, 7, 143))'
             }}
@@ -53,12 +53,12 @@ export function WhatIsQuantum() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-lg text-zinc-300 leading-relaxed mb-6">
-              Think of a taxi ride through the city. Different people, different stories, one shared moment. That's
+              Think of a taxi ride through the city. Different people, different stories, one shared moment. That&apos;s
               iQuantum Podcast—a podcast that brings together voices from all walks of life for conversations that matter.
             </p>
             <p className="text-lg text-zinc-300 leading-relaxed mb-6">
               We dive into culture, community, politics, and everything in between. No filters. No scripts. Just real
-              people talking about what's real.
+              people talking about what&apos;s real.
             </p>
             <div className="flex flex-wrap gap-3 mt-8">
               {topics.map((topic) => (

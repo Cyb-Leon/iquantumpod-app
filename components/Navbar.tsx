@@ -8,7 +8,7 @@ const leftLinks = [
 
 const rightLinks = [
   { href: "/community", label: "Community" },
-  { href: "#about", label: "About" },
+  { href: "/about", label: "About" },
   { href: "#contact", label: "Contact" },
 ]
 

@@ -96,7 +96,7 @@ export function FeaturedEpisodes() {
   return (
     <section id="episodes" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl sm:text-5xl font-bol mb-4 text-center  graffi-titles bg-clip-text text-transparent "
+        <h2 className="text-4xl sm:text-5xl mb-4 text-center  graffi-titles bg-clip-text text-transparent "
                             style={{
               backgroundImage: 'linear-gradient(to right,rgb(255, 0, 0),rgb(255, 11, 11),rgb(255, 106, 0),rgb(255, 191, 0),rgb(11, 120, 123),rgb(148, 1, 9),rgb(93, 7, 143))'
             }}

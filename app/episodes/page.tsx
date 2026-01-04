@@ -145,11 +145,11 @@ const categories = ["All", "Culture", "Community", "Youth", "Politics", "Society
 function EpisodeCard({ episode }: { episode: Episode }) {
   if (episode.featured) {
     return (
-      <Card className="md:col-span-2 bg-gradient-to-br from-zinc-900 to-zinc-800 border-emerald-500/50 overflow-hidden hover:border-emerald-500 transition-all group">
+      <Card className="md:col-span-2 bg-linear-to-br from-zinc-900 to-zinc-800 border-emerald-500/50 overflow-hidden hover:border-emerald-500 transition-all group">
         <div className="flex flex-col md:flex-row">
           {/* Image Section */}
-          <div className="relative w-full md:w-80 h-64 md:h-auto flex-shrink-0 overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-transparent z-10"></div>
+          <div className="relative w-full md:w-80 h-64 md:h-auto shrink-0 overflow-hidden">
+            <div className="absolute inset-0 bg-linear-to-br from-emerald-500/20 to-transparent z-10"></div>
             <div className="absolute inset-0 animate-pulse-slow">
               <Image
                 src="/iquantumPodcast.png"
