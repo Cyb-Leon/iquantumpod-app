@@ -99,11 +99,11 @@ const categories = ["All", "Announcements", "Community", "Episodes", "Spotlight"
 
 function FeaturedPost({ post }: { post: BlogPost }) {
   return (
-    <Card className="bg-gradient-to-br from-zinc-900 to-zinc-800 border-amber-500/50 overflow-hidden group">
+    <Card className="bg-gradient-to-br from-zinc-900 to-zinc-800 border-emerald-500/50 overflow-hidden group">
       <div className="flex flex-col md:flex-row">
         {/* Image Section */}
         <div className="relative w-full md:w-80 h-64 md:h-auto flex-shrink-0 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-amber-500/20 to-transparent z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-transparent z-10"></div>
           <div className="absolute inset-0 animate-pulse-slow">
             <Image
               src="/iquantumPodcast.png"
@@ -114,18 +114,18 @@ function FeaturedPost({ post }: { post: BlogPost }) {
             />
           </div>
           {/* Animated glow ring */}
-          <div className="absolute inset-4 border-2 border-amber-500/30 rounded-lg animate-ping-slow pointer-events-none"></div>
+          <div className="absolute inset-4 border-2 border-emerald-400/30 rounded-lg animate-ping-slow pointer-events-none"></div>
         </div>
 
         {/* Content Section */}
         <div className="p-8 sm:p-10 flex-1">
           <div className="flex items-center gap-3 mb-4">
-            <span className="px-3 py-1 bg-amber-500 text-black text-xs font-bold rounded animate-pulse">
+            <span className="px-3 py-1 bg-emerald-500 text-black text-xs font-bold rounded animate-pulse">
               FEATURED
             </span>
-            <span className="text-amber-500 text-sm font-medium">{post.category}</span>
+            <span className="text-emerald-500 text-sm font-medium">{post.category}</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 group-hover:text-amber-500 transition-colors">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 group-hover:text-emerald-500 transition-colors">
             {post.title}
           </h2>
           <p className="text-lg text-zinc-400 mb-6 leading-relaxed">{post.excerpt}</p>
@@ -141,7 +141,7 @@ function FeaturedPost({ post }: { post: BlogPost }) {
               </div>
               <span>{post.readTime}</span>
             </div>
-            <Button className="bg-amber-500 hover:bg-amber-600 text-black font-semibold">
+            <Button className="bg-emerald-500 hover:bg-amber-600 text-black font-semibold">
               Read More
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
@@ -154,10 +154,10 @@ function FeaturedPost({ post }: { post: BlogPost }) {
 
 function BlogCard({ post }: { post: BlogPost }) {
   return (
-    <Card className="bg-zinc-900 border-zinc-800 overflow-hidden hover:border-amber-500 transition-all group">
+    <Card className="bg-zinc-900 border-zinc-800 overflow-hidden hover:border-emerald-500  transition-all group">
       <div className="p-6">
-        <span className="text-amber-500 text-sm font-medium">{post.category}</span>
-        <h3 className="text-xl font-bold text-white mt-2 mb-3 group-hover:text-amber-500 transition-colors">
+        <span className="text-emerald-500 text-sm font-medium">{post.category}</span>
+        <h3 className="text-xl font-bold text-white mt-2 mb-3 group-hover:text-accent transition-colors">
           {post.title}
         </h3>
         <p className="text-zinc-400 mb-4 leading-relaxed line-clamp-2">{post.excerpt}</p>
@@ -195,7 +195,7 @@ export default function CommunityPage() {
       <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-            The <span className="text-amber-500">Community</span> Hub
+            The <span className="text-emerald-500">Community</span> Hub
           </h1>
           <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
             Stories, updates, and conversations from the iQuantum family. This is where the community speaks.
@@ -212,7 +212,7 @@ export default function CommunityPage() {
                 key={cat}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   cat === "All"
-                    ? "bg-amber-500 text-black"
+                    ? "bg-emerald-500 text-black"
                     : "bg-zinc-800 text-zinc-300 hover:bg-zinc-700"
                 }`}
               >
@@ -246,7 +246,7 @@ export default function CommunityPage() {
       {/* Newsletter / CTA */}
       <section className="px-4 sm:px-6 lg:px-8 pb-20">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-amber-500/10 to-yellow-600/10 border border-amber-500/30 rounded-2xl p-8 sm:p-12 text-center">
+          <div className="bg-gradient-to-br from-emerald-500/10 to-emerald-600/10 border border-emerald-500/30 rounded-2xl p-8 sm:p-12 text-center">
             <h3 className="text-3xl font-bold text-white mb-4">Join the Conversation</h3>
             <p className="text-zinc-300 mb-8 max-w-xl mx-auto">
               Get weekly updates, exclusive content, and be the first to know when new episodes drop. 
@@ -256,15 +256,15 @@ export default function CommunityPage() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="w-full px-4 py-3 bg-zinc-800 border border-zinc-700 rounded-lg text-white placeholder:text-zinc-500 focus:outline-none focus:border-amber-500"
+                className="w-full px-4 py-3 bg-zinc-800 border border-zinc-700 rounded-lg text-white placeholder:text-zinc-500 focus:outline-none focus:border-emerald-500 "
               />
-              <Button className="bg-amber-500 hover:bg-amber-600 text-black font-semibold h-12 px-8 whitespace-nowrap">
+              <Button className="bg-emerald-500 hover:bg-accent text-black font-semibold h-12 px-8 whitespace-nowrap">
                 Subscribe
               </Button>
             </div>
             <p className="text-zinc-500 text-sm mt-4">
               Already have an account?{" "}
-              <Link href="#" className="text-amber-500 hover:underline">
+              <Link href="#" className="text-emerald-500 hover:underline">
                 Sign in
               </Link>
             </p>
