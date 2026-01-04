@@ -12,6 +12,8 @@ interface Episode {
   platforms: string[]
 }
 
+
+//pull these ep/videos from youtube 
 const episodes: Episode[] = [
   {
     number: 12,
@@ -94,7 +96,7 @@ export function FeaturedEpisodes() {
   return (
     <section id="episodes" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 text-center">Featured Episodes</h2>
+        <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 text-center ">Featured Episodes</h2>
         <p className="text-zinc-400 text-center mb-12">Conversations that move the culture forward</p>
 
         <div className="grid md:grid-cols-2 gap-6">

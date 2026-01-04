@@ -1,6 +1,26 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@font-face{
+    font-family: 'Edo SZ';
+    src: url('../fonts/EdoSZ.woff2') format('woff2'),
+        url('../fonts/EdoSZ.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+
+}
+
+@font-face {
+    font-family: 'DOCALLISME ON STREET';
+    src: url('../fonts/DOCALLISMEONSTREET.woff2') format('woff2'),
+        url('../fonts/DOCALLISMEONSTREET.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 
 @custom-variant dark (&:is(.dark *));
 
@@ -214,9 +234,17 @@
 
 
 .water-brush-regular {
-  font-family: "Water Brush", cursive;
+  font-family: "Edo SZ", cursive;
+      font-weight: normal;
+    font-style: normal;
 }
 
 .oooh-baby{
-  font-family: "Water Brush", fantasy;
+  font-family: "BabyOutFont", fantasy;
+}
+
+.graffi-titles{
+  font-family: "DOCALLISME ON STREET";
+    font-weight: normal;
+    font-style: normal;
 }

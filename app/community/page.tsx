@@ -99,11 +99,11 @@ const categories = ["All", "Announcements", "Community", "Episodes", "Spotlight"
 
 function FeaturedPost({ post }: { post: BlogPost }) {
   return (
-    <Card className="bg-gradient-to-br from-zinc-900 to-zinc-800 border-emerald-500/50 overflow-hidden group">
+    <Card className="bg-linear-to-br from-zinc-900 to-zinc-800 border-emerald-500/50 overflow-hidden group">
       <div className="flex flex-col md:flex-row">
         {/* Image Section */}
-        <div className="relative w-full md:w-80 h-64 md:h-auto flex-shrink-0 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-transparent z-10"></div>
+        <div className="relative w-full md:w-80 h-64 md:h-auto shrink-0 overflow-hidden">
+          <div className="absolute inset-0 bg-linear-to-br from-emerald-500/20 to-transparent z-10"></div>
           <div className="absolute inset-0 animate-pulse-slow">
             <Image
               src="/iquantumPodcast.png"
@@ -193,7 +193,7 @@ export default function CommunityPage() {
 
       {/* Hero */}
       <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto text-center ">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
             The <span className="text-emerald-500">Community</span> Hub
           </h1>

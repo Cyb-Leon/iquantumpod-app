@@ -45,7 +45,7 @@ export function WhatIsQuantum() {
             Podcast
           </span>
         </div>
-        <h2 className="text-4xl sm:text-5xl font-bold text-white mb-12 text-center ">What Is Quantum Podcast?</h2>
+        <h2 className="text-4xl sm:text-5xl font-bold text-white mb-12 text-center graffi-titles ">What Is Quantum Podcast?</h2>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-lg text-zinc-300 leading-relaxed mb-6">

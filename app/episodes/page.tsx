@@ -256,7 +256,7 @@ export default function EpisodesPage() {
       {/* Hero */}
       <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 ">
             All <span className="text-emerald-500">Episodes</span>
           </h1>
           <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
