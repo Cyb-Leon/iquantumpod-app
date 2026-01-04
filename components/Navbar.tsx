@@ -3,11 +3,11 @@ import { Logo } from "./Logo"
 
 const leftLinks = [
   { href: "/", label: "Home" },
-  { href: "#episodes", label: "Episodes" },
+  { href: "/episodes", label: "Episodes" },
 ]
 
 const rightLinks = [
-  { href: "#community", label: "Community" },
+  { href: "/community", label: "Community" },
   { href: "#about", label: "About" },
   { href: "#contact", label: "Contact" },
 ]
